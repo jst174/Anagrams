@@ -6,13 +6,13 @@ public class Anagram {
 
 	public String reverseString(String input) {
 		String[] words = input.split(SPACE);
-		String[] outputString = new String[words.length];
+		String[] outputWords = new String[words.length];
 		int i = 0;
 		for (String word : words) {
-			outputString[i] = reverseWord(word);
+			outputWords[i] = reverseWord(word);
 			i++;
 		}
-		return String.join(SPACE, outputString);
+		return String.join(SPACE, outputWords);
 	}
 
 	private String reverseWord(String word) {
