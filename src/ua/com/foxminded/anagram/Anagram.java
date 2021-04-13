@@ -1,21 +1,22 @@
 package ua.com.foxminded.anagram;
 
 public class Anagram {
-	
-	public  String reverseString(String input) {
-		final String SPACE = " ";
+
+	final static String SPACE = " ";
+
+	public String reverseString(String input) {
 		String[] words = input.split(SPACE);
 		String[] outputString = new String[words.length];
 		int i = 0;
-		for (String string : words) {
-			outputString[i] = reverseWord(string);
+		for (String word : words) {
+			outputString[i] = reverseWord(word);
 			i++;
 		}
 		return String.join(SPACE, outputString);
 	}
 
-	private String reverseWord(String input) {
-		char[] chars = input.toCharArray();
+	private String reverseWord(String word) {
+		char[] chars = word.toCharArray();
 		int i = 0;
 		int j = chars.length - 1;
 		while (i < j) {
