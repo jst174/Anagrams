@@ -2,15 +2,14 @@ package ua.com.foxminded.anagram;
 
 public class Anagram {
 
-	final static String SPACE = " ";
+	private static final String SPACE = " ";
 
 	public String reverseString(String input) {
 		String[] words = input.split(SPACE);
 		String[] outputWords = new String[words.length];
 		int i = 0;
 		for (String word : words) {
-			outputWords[i] = reverseWord(word);
-			i++;
+			outputWords[i++] = reverseWord(word);
 		}
 		return String.join(SPACE, outputWords);
 	}
