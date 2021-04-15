@@ -16,27 +16,42 @@ class AnagramTest {
 	}
 
 	@Test
-	public void testReverseStringWithLettersOnly() throws IllegalAccessException {
-		assertEquals("dcba hgfe", anagram.reverseString("abcd efgh"));
-	}
-
-	@Test
-	public void testReverseStringWithLettersAndNonLetters() throws IllegalAccessException {
-		assertEquals("d1cba hgf!e", anagram.reverseString("a1bcd efg!h"));
-	}
-
-	@Test
-	public void testReverseStringWithNonLettersOnly() throws IllegalAccessException {
-		assertEquals("12%3! 45@6^", anagram.reverseString("12%3! 45@6^"));
-	}
-
-	@Test
-	public void testReverseStringWithNull() {
+	public void reverseString_argumentIsNull_ShouldThrowException() {
 		assertThrows(IllegalArgumentException.class, () -> anagram.reverseString(null));
 	}
 
 	@Test
-	public void testReverseStringWithEmpty() {
-		assertThrows(IllegalArgumentException.class, () -> anagram.reverseString(""));
+	public void reverseString_argumentIsEmpty_ShouldReturnEmptyString() {
+		assertEquals("", anagram.reverseString(""));
+	}
+
+	@Test
+	public void reverseString_WordWithLettersOnly_ShouldReverseWord() {
+		assertEquals("dcba", anagram.reverseString("abcd"));
+	}
+
+	@Test
+	public void reverseString_WordWithSomeNonLettersSymbol_NonLettersSymbolsShouldStayOnTheSamePlaces() {
+		assertEquals("d1cba!", anagram.reverseString("a1bcd!"));
+	}
+
+	@Test
+	public void reverseString_WordWithNonLettersSymbolsOnly_ShouldNotReverse() {
+		assertEquals("12@3!", anagram.reverseString("12@3!"));
+	}
+
+	@Test
+	public void reverseString_TextWithWordsConsistingOnlyOfLetters_ShouldReverseAllWords() {
+		assertEquals("dcba hgfe", anagram.reverseString("abcd efgh"));
+	}
+
+	@Test
+	public void reverseString_TextWithWordsConsistingOfSomeNonLettersSymbol_NonLettersSymbolsShouldStayOnTheSamePlaces() {
+		assertEquals("d1cba hgf!e", anagram.reverseString("a1bcd efg!h"));
+	}
+
+	@Test
+	public void testReverseString_TextWithWordsConsistingOfOnlyNonLettersSymbol_ShouldNotReverse() {
+		assertEquals("12%3! 45@6^", anagram.reverseString("12%3! 45@6^"));
 	}
 }

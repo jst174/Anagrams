@@ -4,8 +4,8 @@ public class Anagram {
 
 	private static final String SPACE = " ";
 
-	public String reverseString(String input) throws IllegalAccessException {
-		if ((input == null) || (input.isEmpty())) {
+	public String reverseString(String input) {
+		if (input == null) {
 			throw new IllegalArgumentException();
 		}
 		String[] words = input.split(SPACE);
