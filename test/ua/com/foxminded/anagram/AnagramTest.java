@@ -46,12 +46,12 @@ class AnagramTest {
 	}
 
 	@Test
-	public void reverseString_TextWithWordsConsistingOfSomeNonLettersSymbol_NonLettersSymbolsShouldStayOnTheSamePlaces() {
+	public void reverseString_TextWithWordsConsistingOfSomeNonLettersSymbol_ShouldReverseLettersOnly() {
 		assertEquals("d1cba hgf!e", anagram.reverseString("a1bcd efg!h"));
 	}
 
 	@Test
-	public void testReverseString_TextWithWordsConsistingOfOnlyNonLettersSymbol_ShouldNotReverse() {
+	public void testReverseString_TextWithWordsConsistingOfOnlyNonLettersSymbol_ShouldReturnSameText() {
 		assertEquals("12%3! 45@6^", anagram.reverseString("12%3! 45@6^"));
 	}
 }
