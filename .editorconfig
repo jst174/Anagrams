@@ -7,7 +7,7 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 indent_style = tab
 indent_size = 2
-tab_width = 3
+tab_width = 1
 
 [*.{xml,java}]
 indent_style = tab
