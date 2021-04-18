@@ -1,6 +1,5 @@
 package ua.com.foxminded.anagram;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
